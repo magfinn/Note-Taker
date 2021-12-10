@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use(html);
-// app.use(api);
+app.use(api);
 
 
 app.listen(PORT, () =>
