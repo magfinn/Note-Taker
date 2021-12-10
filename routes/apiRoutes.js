@@ -5,7 +5,7 @@ const path = require("path");
 const notes = require('./db/db.json');
 
 // Helper method for generating unique ids
-const uuid = require('./helpers/uuid');
+// const uuid = require('./helpers/uuid');
 
 //read db.json file and reutrn all saved notes as JSON
 router.get('/api/notes', (req, res) => {

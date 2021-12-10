@@ -4,7 +4,7 @@ const PORT = 3001;
 const app = express();
 const path = require("path");
 const html = require("./routes/htmlRoutes");
-const api = require ("./routes/apiRoutes");
+// const api = require ("./routes/apiRoutes");
 const uuid = require('./helpers/uuid');
 
 // parse incoming string or array data
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use(html);
-app.use(api);
+// app.use(api);
 
 
 app.listen(PORT, () =>
