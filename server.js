@@ -1,11 +1,13 @@
-// Import express package
-const express = require('express');
-const PORT = 3001;
-const app = express();
+const fs = require('fs');
 const path = require("path");
+const express = require('express');
+// added notes object const
+const { notes } = require('./db/db');
 const html = require("./routes/htmlRoutes");
-// const api = require ("./routes/apiRoutes");
-const uuid = require('./helpers/uuid');
+const api = require ("./routes/apiRoutes");
+
+const PORT = process.env.PORT || 3001;
+const app = express();
 
 // parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +20,6 @@ app.use(html);
 app.use(api);
 
 
-app.listen(PORT, () =>
-  console.log(`Example app listening at http://localhost:${PORT}`)
-);
+app.listen(PORT, () => {
+  console.log(`API server now on port ${PORT}!`);
+});
