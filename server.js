@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require("path");
 const express = require('express');
 // added notes object const
-const { notes } = require('./db/db');
+const notes = require('./db/db');
 const html = require("./routes/htmlRoutes");
 const api = require ("./routes/apiRoutes");
 
@@ -16,8 +16,9 @@ app.use(express.json());
 //adds front-end files
 app.use(express.static("public"));
 
-app.use(html);
 app.use(api);
+app.use(html);
+
 
 
 app.listen(PORT, () => {

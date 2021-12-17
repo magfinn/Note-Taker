@@ -1,31 +1,39 @@
 const fs = require('fs');
+const util = require('util');
 const notes = require('../db/db.json');
+//middleware for express
 const router = require("express").Router()
-const path = require("path");
 // Helper method for generating unique ids
 const uuid = require('../helpers/uuid');
+//makes readFile asynchronous
+const readFileAsync = util.promisify(fs.readFile)
 
 //read db.json file and reutrn all saved notes as JSON
 router.get('/api/notes', (req, res) => {
-  res.json(`${req.method} request received to get notes`);
-  console.log(`${req.method} request received to get notes`);
+  // res.json(`${req.method} request received to get notes`);
+  // console.log(`${req.method} request received to get notes`);
+
+  readFileAsync('./db/db.json', 'utf8') .then((data) => {
+    console.log(data);
+    res.json(JSON.parse(data));
+  })
 });
 
 //get request for a specific note
-router.get('/api/notes/:note_id', (req, res) => {
-  if (req.body && req.params.note_id) {
-    console.log(`${req.method} request received to retrieve a single note`);
-    const noteID = req.params.note_id;
-    for (let i = 0; i < notes.length; i++) {
-      const currentNote = notes[i];
-      if (currentNote.notes_id === noteID) {
-        res.json(currentNote);
-        return;
-      }
-    }
-    res.json('Note ID not found');
-  }
-})
+// router.get('/api/notes/:note_id', (req, res) => {
+//   if (req.body && req.params.note_id) {
+//     console.log(`${req.method} request received to retrieve a single note`);
+//     const noteID = req.params.note_id;
+//     for (let i = 0; i < notes.length; i++) {
+//       const currentNote = notes[i];
+//       if (currentNote.notes_id === noteID) {
+//         res.json(currentNote);
+//         return;
+//       }
+//     }
+//     res.json('Note ID not found');
+//   }
+// })
 
 //POST request to add a note
 router.post('/api/notes', (req, res) => {
@@ -47,9 +55,11 @@ router.post('/api/notes', (req, res) => {
     };
 
     //obtain existing notes
-    fs.readFile('../db/db.json', 'utf8', (err, data) => {
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+      //if error, log error
       if (err) {
         console.error(err);
+        // if no errors, parse data, push notes, and write file.
       } else {
         //convert string into JSON object
         const parsedNotes = JSON.parse(data);
@@ -59,12 +69,16 @@ router.post('/api/notes', (req, res) => {
 
         //write updated notes back to the file
         fs.writeFile(
-          '../db/db.json',
-          JSON.stringify(parsedNotes, null, 4),
-          (writeErr) =>
-          writeErr ?
-          console.error(writeErr) :
-          console.log('Success in updating notes!')
+          './db/db.json', (err, data) => {
+            if(err) {
+              (writeErr) =>
+              writeErr ?
+              console.error(writeErr) :
+              console.log ('Succes in updating notes!');
+            } else {
+              JSON.stringify(parsedNotes, null, 4)
+            }
+          } 
         );
       }
     });
