@@ -25,7 +25,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
-
+//getting and rendering notes not working. Not 'getting' from 
 
 const getNotes = () =>
   fetch('/api/notes', {
@@ -35,7 +35,7 @@ const getNotes = () =>
     },
   });
 
-
+// saving notes is working - it pushes to db.json file
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
