@@ -1,3 +1,17 @@
 [
-    
+    {
+        "title": "Send nana a holiday card",
+        "text": "address from Leslie",
+        "note_id": "502b"
+    },
+    {
+        "title": "Wrap gifts",
+        "text": "for Lang's",
+        "note_id": "5c45"
+    },
+    {
+        "title": "Pick up pie",
+        "text": "for Mike & Amelia",
+        "note_id": "ca2a"
+    }
 ]

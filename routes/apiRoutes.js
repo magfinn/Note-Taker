@@ -10,15 +10,12 @@ const readFileAsync = util.promisify(fs.readFile)
 
 //read db.json file and reutrn all saved notes as JSON
 router.get('/api/notes', (req, res) => {
-  // res.json(`${req.method} request received to get notes`);
-  // console.log(`${req.method} request received to get notes`);
 
   readFileAsync('./db/db.json', 'utf8') .then((data) => {
     console.log(data);
     res.json(JSON.parse(data));
   })
 });
-
 
 //POST request to add a note
 router.post('/api/notes', (req, res) => {
@@ -58,7 +55,7 @@ router.post('/api/notes', (req, res) => {
               (writeErr) =>
               writeErr 
               ? console.error(writeErr) 
-              :console.log ('Succes in updating notes!')
+              :console.log ('Success in updating notes!')
         );
       }
     });
