@@ -69,16 +69,11 @@ router.post('/api/notes', (req, res) => {
 
         //write updated notes back to the file
         fs.writeFile(
-          './db/db.json', (err, data) => {
-            if(err) {
+          './db/db.json', JSON.stringify (parsedNotes, null, 4),
               (writeErr) =>
-              writeErr ?
-              console.error(writeErr) :
-              console.log ('Succes in updating notes!');
-            } else {
-              JSON.stringify(parsedNotes, null, 4)
-            }
-          } 
+              writeErr 
+              ? console.error(writeErr) 
+              :console.log ('Succes in updating notes!')
         );
       }
     });
