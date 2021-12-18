@@ -1,3 +1,12 @@
 [
-    
+    {
+        "title": "Note #1",
+        "text": "notes take 1",
+        "note_id": "c7ec"
+    },
+    {
+        "title": "Note #2",
+        "text": "notes take 2",
+        "note_id": "2d70"
+    }
 ]
