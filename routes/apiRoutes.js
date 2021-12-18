@@ -19,22 +19,6 @@ router.get('/api/notes', (req, res) => {
   })
 });
 
-//get request for a specific note
-// router.get('/api/notes/:note_id', (req, res) => {
-//   if (req.body && req.params.note_id) {
-//     console.log(`${req.method} request received to retrieve a single note`);
-//     const noteID = req.params.note_id;
-//     for (let i = 0; i < notes.length; i++) {
-//       const currentNote = notes[i];
-//       if (currentNote.notes_id === noteID) {
-//         res.json(currentNote);
-//         return;
-//       }
-//     }
-//     res.json('Note ID not found');
-//   }
-// })
-
 //POST request to add a note
 router.post('/api/notes', (req, res) => {
   console.info(`${req.method} request received to add a note`);
@@ -89,5 +73,6 @@ router.post('/api/notes', (req, res) => {
     res.json('Error in posting review');
   }
 });
+
 
 module.exports = router;

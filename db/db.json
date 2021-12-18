@@ -1,3 +1,17 @@
 [
-    
+    {
+        "title": "Take out the trash",
+        "text": "Garbage day is Friday",
+        "note_id": "f2e7"
+    },
+    {
+        "title": "Pick up groceries",
+        "text": "milk, eggs, bread, carrots, pickles",
+        "note_id": "d088"
+    },
+    {
+        "title": "Finish Challenge",
+        "text": "Due on Sunday",
+        "note_id": "0bf2"
+    }
 ]
