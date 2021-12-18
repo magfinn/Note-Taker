@@ -7,47 +7,54 @@
 </p>
 
 ## 📜 Description
->This is a simple note-taker deployed through Heroku.
+>This is a simple and practical note-taking application deployed through Heroku.
 
-
-
-🔗 <a href = 'https://example.com'>Link<a/>
+🔗 <a href = 'https://simply-notes-1.herokuapp.com/'>Link<a/>
 
 ## ✅ Installing / Getting Started
 
 > ### 🧰 Requirements
 
->
+>You can clone this project through Github
+```git clone @git@github.com:magfinn/Simply_notes.git ```
 
->Install node.js, inquirer, express. Used Heroku for deployment.
+This project uses Node, Inquirer, Express and Heroku (for deployment). 
+
+Required: 
+Node.js (view install guide <a-href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"> here</a>)
+You can also download the latest version of npm, on the command line, run the following command:
+``` npm install -g npm ```
+
+Once you have Node.js installed, create a directory to hold your application, and make that your working directory
+``` mkdir myapp
+cd myapp ```
+
+Use the npm init command to create a package.json file for your application. 
+```npm init ```
+This command prompts you for a number of things. Simply hit RETURN to accept defaults for all except 
+``` entry point: (index.js) ```
+
+Install express:
+``` npm install express --save ```
+
+Install all dependent modules: 
+``` npm install ```
 
 ## 🚀 Usage
 >
->1. Visit [link] and enter note. 
+> To use this app, simply visit https://simply-notes-1.herokuapp.com/.
 
 ## 🙌 Credits
 
->
-
->
-
->
-
->>
-
 ## 🚥 Tests
 
-Tested through Heroku
+Tested through Heroku.
 
 ## 🤝 Contributing
 
-
-
-
-
 ## ❓ Questions?
 
->Have questions or need more information? Contact me by <a href='mailto:example@gmail.com'>e-mail</a>.
+> Have questions or need more information? Contact me by <a href='mailto:wisner.maggiel@gmail.com'>e-mail</a>.
 
 **Maggie Finnegan**
 
