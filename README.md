@@ -21,7 +21,7 @@
 This project uses Node, Inquirer, Express and Heroku (for deployment). 
 
 Required: 
-Node.js (view install guide <a-href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"> here</a>)
+Node.js (view install guide <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"> here</a>)
 You can also download the latest version of npm. 
 On the command line, run the following command:
 ``` npm install -g npm ```
