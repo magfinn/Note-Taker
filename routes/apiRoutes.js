@@ -10,8 +10,6 @@ const readFileAsync = util.promisify(fs.readFile)
 
 //read db.json file and reutrn all saved notes as JSON
 router.get('/api/notes', (req, res) => {
-  // res.json(`${req.method} request received to get notes`);
-  // console.log(`${req.method} request received to get notes`);
 
   readFileAsync('./db/db.json', 'utf8') .then((data) => {
     console.log(data);
@@ -19,21 +17,6 @@ router.get('/api/notes', (req, res) => {
   })
 });
 
-//get request for a specific note
-// router.get('/api/notes/:note_id', (req, res) => {
-//   if (req.body && req.params.note_id) {
-//     console.log(`${req.method} request received to retrieve a single note`);
-//     const noteID = req.params.note_id;
-//     for (let i = 0; i < notes.length; i++) {
-//       const currentNote = notes[i];
-//       if (currentNote.notes_id === noteID) {
-//         res.json(currentNote);
-//         return;
-//       }
-//     }
-//     res.json('Note ID not found');
-//   }
-// })
 
 //POST request to add a note
 router.post('/api/notes', (req, res) => {
